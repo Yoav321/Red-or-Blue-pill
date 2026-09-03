@@ -16,12 +16,17 @@ and burned down your house
 and realize that the roof is going to fall any second but you cant remember anything about yourself
 """)
 
-    response: str = input("""Who are you?
+    response: str = ""
+    while response == "":
+        response = input("""Who are you?
     1) Boy
     2) Girl
      """)
 
-    name: str = input("What is your name? ")
+    name: str = ""
+    while name == "":
+        name = input("What is your name? ")
+
     where_am_i_pt2()
 
 def where_am_i_pt2() -> None:
@@ -90,6 +95,13 @@ def escapept2() -> None:
 
     if "1" in response:
         police()
+
+    elif "2" in response:
+        stash()
+
+    else:
+        print("Invalid input")    
+        main()
 def police() -> None:
     """
     Manages the police response
@@ -113,10 +125,20 @@ But you will NOT let your former best friend get away with this,
 even if its the last thing that you do.
 """)
 
-response: str = input("""How determined are you really?
+    response: str = input("""How determined are you really?
 1) I cant actually do this he was my best friend I cant do this
 2) Even if I dont get the revenge I want I will make his life a living fiery ball of hell until my last breath
 """)
+
+    if "1" in response:
+        coward()
+
+    elif "2" in response:
+        committed()
+
+    else:
+        print("Invalid input")    
+        main()
 def committed() -> None:
     """
     Manages the committed branch
